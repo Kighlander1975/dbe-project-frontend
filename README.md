@@ -3,7 +3,21 @@
 ### Inhaltsverzeichnis
 1. [Einleitung](#einleitung)
 2. [Projektbeschreibung](#projektbeschreibung)
+   - [Die Idee](#die-idee)
+   - [Die Regeln des Spiels Stechen](#die-regeln-des-spiels-stechen)
+     - [Das Ansagen](#das-ansagen)
+     - [Das Spielen](#das-spielen)
+     - [Das Auswerten](#das-auswerten)
+   - [Glossar der Spielbegriffe](#glossar-der-spielbegriffe)
 3. [Technische Anforderungen](#technische-anforderungen)
+   - [Technologiestack](#technologiestack)
+   - [Kernfunktionalitäten](#kernfunktionalitäten)
+   - [Benutzeroberfläche](#benutzeroberfläche)
+   - [Datenverwaltung](#datenverwaltung)
+   - [Sicherheit und Datenschutz](#sicherheit-und-datenschutz)
+   - [Benutzerrollen und Zugriffsrechte](#benutzerrollen-und-zugriffsrechte)
+   - [Rollenmanagement und Zugriffslogik](#rollenmanagement-und-zugriffslogik)
+   - [Erweiterbarkeit](#erweiterbarkeit)
 
 ## Einleitung
 Das **Stechen**-Helper Projekt ist eine Webanwendung, die entwickelt wird, um die Organisation und Verwaltung von dem Kartenspiel "**Stechen**" zu erleichtern. Die Anwendung soll Benutzern helfen, **Stechen**-Partien zu planen, zu verwalten und zu verfolgen, indem sie eine benutzerfreundliche Oberfläche und leistungsstarke Funktionen bietet. Diese Webanwendung wird für **Tablets und Desktop** entwickelt, aber geeignete, große Handys im Querformat werden ebenfalls unterstützt.
