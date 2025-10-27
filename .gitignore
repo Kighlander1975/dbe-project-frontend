@@ -1,0 +1,11 @@
+# Ignore all markdown files except README.md
+*.md
+!README.md
+
+# Common development files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# To be expanded as the project grows
