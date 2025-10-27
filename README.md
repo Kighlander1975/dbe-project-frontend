@@ -133,7 +133,7 @@ Die Benutzeroberfläche wird für Tablets und Desktop optimiert, mit Unterstütz
 </div>
 
 **Legende:** A = Ansage, S = Stiche, P = Punkte dieser Runde, Ges = Gesamtpunkte  
-* = Dealer in dieser Runde
+\* = Dealer in dieser Runde
 
 Besonderheiten des UI-Designs:
 - Fixierte Spalten für Spielernamen und Gesamtpunkte (bleiben immer sichtbar)
