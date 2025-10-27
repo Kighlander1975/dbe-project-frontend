@@ -10,7 +10,7 @@ Das **Stechen**-Helper Projekt ist eine Webanwendung, die entwickelt wird, um di
 
 ## Projektbeschreibung
 ### Die Idee
-Das Kartenspiel **Stechen** ist in meiner Familie ein beliebtes Gesellschaftsspiel, das oft mit Freunden und der Familie gespielt wird. Es basiert auf dem Kartenspiel [**11er Raus**](https://amzn.eu/d/eReStgf), dessen Regeln ich gleich noch näher erläutere. Für dieses Spiel braucht man einen Schriftführer, der die Punkte mitschreibt und so später dann der Gewinner ermittelt werden kann. Und HIER kommt die App ins Spiel. Meine App soll den Papieraufwand minimieren, wenn nicht gleich eliminieren und einen schnelleren und zugleich komplett regelkonformen Ablauf zu gewährleisten. Das *tracken* einer Partie ist aber nur ein Teil der App. Mit dieser App soll man zudem auch mehrere Spielgruppen organisieren können, Ranglisten und Spielerstärken ermitteln und so sogar Ligaspiele ermöglichen.
+Das Kartenspiel **Stechen** ist in meiner Familie ein beliebtes Gesellschaftsspiel, das oft mit Freunden und der Familie gespielt wird. Es basiert auf dem Kartenspiel [**11er Raus**](https://amzn.eu/d/eReStgf), dessen Regeln ich gleich noch näher erläutere. Für dieses Spiel braucht man einen Schriftführer, der die Punkte mitschreibt und so später dann der Gewinner ermittelt werden kann. Und HIER kommt die App ins Spiel. Meine App soll den Papieraufwand minimieren, wenn nicht gleich eliminieren und einen schnelleren und zugleich komplett regelkonformen Ablauf zu gewährleisten. Das *tracken* einer Partie ist aber nur ein Teil der App. Mit dieser App soll man zudem auch mehrere Spielgruppen organisieren können und Ranglisten sowie Spielerstärken ermitteln.
 
 ### Die Regeln des Spiels **Stechen**
 Für dieses Spiel benötigt man das oben erwähnte **11er Raus** Kartenspiel. **Stechen** ist ein Spiel für min. 2 und maximal 11 Personen. Den meisten Spielspaß hat man allerdings erst ab mindestens drei Personen.
@@ -102,7 +102,6 @@ Die Anwendung wird mit folgenden Technologien entwickelt:
 
 #### 3. Organisations-Features
 - Erstellung von Einzelspielen
-- Organisation von Ligen
 - Verwaltung mehrerer Spielgruppen
 - Einladungssystem für Spiele
 
@@ -115,28 +114,30 @@ Die Anwendung wird mit folgenden Technologien entwickelt:
 ### Benutzeroberfläche
 
 Die Benutzeroberfläche wird für Tablets und Desktop optimiert, mit Unterstützung für große Handys im Querformat. Die Hauptansicht des Spiels wird wie folgt strukturiert:
-```
-Datum: 06.11.2025 (Ziel: 106 Punkte)
-+----------------------------------------------------------+
-| Spieler    |<------- Scrollbarer Bereich -------->| Ges. |
-|           | #01          | #02          | #03     |      |
-|           | A | S | P    | A | S | P    | A | S | P|      |
-+----------------------------------------------------------+
-| Spieler 1  | 2 | 3 | 3   | 4 | 1 | 1   | 0 | 2 | 2| 076  |
-| Spieler 2* | 0 | 1 | 1   | 1 |>1<| 11  | 3 | 2 | 2|<112> |
-| Spieler 3  | 2 |>2<| 12  | 3 | 4 | 4   | 2 |>2<| 12| 107  |
-| Spieler 4  | 3 |>3<| 13  | 0 |>0<| 20  | 2 | 1 | 1| 083  |
-| ...        |...|...|...  |...|...|...  |...|...|...| ...  |
-| Spieler x  | 0 |>0<| 20  | 1 |>1<| 11  | 1 |>1<| 11| 098  |
-+----------------------------------------------------------+
 
-Legende: A = Ansage, S = Stiche, P = Punkte dieser Runde, Ges = Gesamtpunkte
+**Datum: 06.11.2025 (Ziel: 106 Punkte)**
+
+<div class="table-container" style="overflow-x: auto;">
+
+| Spieler ||||||||||| Ges. |
+|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| | **Runde #01** ||| **Runde #02** ||| **Runde #03** ||| **...** | |
+| | A | S | P | A | S | P | A | S | P | | |
+| Spieler 1 | 2 | 3 | 3 | 4 | 1 | 1 | 0 | 2 | 2 | ... | 076 |
+| **Spieler 2*** | 0 | 1 | 1 | 1 | **1** | **11** | 3 | 2 | 2 | ... | **112** |
+| Spieler 3 | 2 | **2** | **12** | 3 | 4 | 4 | 2 | **2** | **12** | ... | 107 |
+| Spieler 4 | 3 | **3** | **13** | 0 | **0** | **20** | 2 | 1 | 1 | ... | 083 |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| Spieler x | 0 | **0** | **20** | 1 | **1** | **11** | 1 | **1** | **11** | ... | 098 |
+
+</div>
+
+**Legende:** A = Ansage, S = Stiche, P = Punkte dieser Runde, Ges = Gesamtpunkte  
 * = Dealer in dieser Runde
-```
 
 Besonderheiten des UI-Designs:
-- Fixierte Spalten für Spielernamen und Gesamtpunkte
-- Horizontal scrollbarer Bereich für die Rundendetails
+- Fixierte Spalten für Spielernamen und Gesamtpunkte (bleiben immer sichtbar)
+- Horizontal scrollbarer Bereich zwischen den fixierten Spalten, der alle Rundendetails enthält und bei vielen Runden ein horizontales Scrollen ermöglicht, während die Spielernamen und Gesamtpunkte stets sichtbar bleiben
 - Farbliche Hervorhebung für:
   - Dealer der aktuellen Runde
   - Übereinstimmende Ansagen und erreichte Stiche
@@ -151,7 +152,6 @@ Besonderheiten des UI-Designs:
   - Spiele (ID, Datum, Teilnehmer, Gewinner)
   - Runden (Spiel-ID, Rundennummer, Dealer)
   - Ergebnisse (Runden-ID, Spieler-ID, Ansage, Stiche, Punkte)
-  - Ligen (ID, Name, Teilnehmer, Zeitraum)
 - **Skalierbarkeit**: Optimierte Abfragen für schnelle Datenverarbeitung auch bei großen Datenmengen
 
 ### Sicherheit und Datenschutz
@@ -167,8 +167,7 @@ Besonderheiten des UI-Designs:
 - Spieler einladen und hinzufügen
 - Spielverlauf dokumentieren (Ansagen, Stiche, Punkte)
 - Spielergebnisse finalisieren
-- Ligen und Turniere organisieren und verwalten
-- Ligaspiele mit Passwortschutz versehen
+- Spielgruppen organisieren und verwalten
 
 #### Spieler
 - An Spielen teilnehmen
@@ -196,11 +195,6 @@ Besonderheiten des UI-Designs:
   - Der Spielleiter bleibt aktiv, bis er sich explizit abmeldet
   - Bei Verbindungsverlust bleibt die Spielleiter-Rolle erhalten (Offline-Funktionalität)
 
-- **Passwortschutz für Ligen**:
-  - Beim Erstellen einer Liga muss ein Passwort festgelegt werden
-  - Nur mit diesem Passwort können autorisierte Personen die Liga weiterführen
-  - Das Passwort ermöglicht die Übergabe der Spielleiter-Rolle an andere Benutzer
-
 - **Offline-Funktionalität**:
   - Lokale Zwischenspeicherung (Cookies/LocalStorage) für Verbindungsunterbrechungen
   - Synchronisierung mit dem Server, sobald die Verbindung wiederhergestellt ist
@@ -222,5 +216,11 @@ Die Anwendung wird modular aufgebaut, um zukünftige Erweiterungen zu erleichter
 - **Exportfunktionen**: Für Spielstatistiken und Ergebnisse (PDF, CSV)
 
 - **Spielvarianten**: Möglichkeit zur Erweiterung um weitere Spielmodi oder Regelanpassungen
+
+- **Liga-System**:
+  - Organisation von Ligen und Turnieren
+  - Passwortgeschützte Liga-Verwaltung
+  - Saisonale Wettbewerbe
+  - Automatische Ranglisten für Ligen
 
 - **Soziale Funktionen**: Freundeslisten, Direktnachrichten, Spielersuche
